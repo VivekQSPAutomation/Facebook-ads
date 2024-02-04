@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV File Upload</title>
+     <style>
+        #progress {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .upload-container {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .upload-btn {
+            border: 2px solid #3498db;
+            color: #3498db;
+            background-color: #fff;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        #file-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        #remove-btn {
+            display: none;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        #radius {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <style>
+
+     table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    .container {
+        max-width: 600px; /* Adjust the maximum width as needed */
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+ <div class="container">
+     <form action ="/upload" method="post" enctype="multipart/form-data"  onsubmit=" return showProgress()">
+        <label for="file">Upload CSV File:</label>
+        <div class="upload-container">
+            <label for="file-upload" class="upload-btn" id="upload-btn">Choose File</label>
+            <input type="file" id="file-upload" class="file-input" name="file" accept=".csv" required>
+        </div>
+        <div id="file-info"></div>
+        <div id="remove-btn" onclick="removeFile()">Remove</div>
+        <label for="radius">Radius (in miles):</label>
+        <input type="number" id="radius" name="radius" placeholder="Enter radius in miles" required>
+
+        <input type="submit" value="Upload and Process" id="submit-btn">
+
+
+    </form>
+  {% if success %}
+    <table>
+        <tr>
+            <td>{{ file_name}}</td>
+            <td><a href="{{ download_url }}" download>Download File</a></td>
+            <td>{{ message}}</td>
+        </tr>
+    </table>
+    {% endif %}
+
+      </div>
+ <script>
+            document.getElementById('file-upload').addEventListener('change', function () {
+                var fileInput = document.getElementById('file-upload');
+                var fileInfo = document.getElementById('file-info');
+                var uploadBtn = document.getElementById('upload-btn');
+                var removeBtn = document.getElementById('remove-btn');
+
+                if (fileInput.files.length > 0) {
+                    fileInfo.textContent = 'File: ' + fileInput.files[0].name;
+                    uploadBtn.style.display = 'none';
+                    removeBtn.style.display = 'inline-block';
+                } else {
+                    //fileInfo.textContent = 'No file chosen';
+                    uploadBtn.style.display = 'inline-block';
+                    removeBtn.style.display = 'none';
+                }
+            });
+
+            function removeFile() {
+                var fileInput = document.getElementById('file-upload');
+                var fileInfo = document.getElementById('file-info');
+                var uploadBtn = document.getElementById('upload-btn');
+                var removeBtn = document.getElementById('remove-btn');
+
+                fileInput.value = '';
+                //fileInfo.textContent = 'No file chosen';
+                uploadBtn.style.display = 'inline-block';
+                removeBtn.style.display = 'none';
+            }
+
+             function showProgress() {
+            var submitBtn = document.getElementById("submit-btn");
+            submitBtn.value = "Processing...";
+            submitBtn.disabled = true;
+            document.getElementById("progress").style.display = "block";
+        }
+        </script>
+
+</body>
+</html>
