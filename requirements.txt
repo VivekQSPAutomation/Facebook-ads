@@ -1,0 +1,7 @@
+selenium
+pytest
+allure-pytest
+PyGithub
+pytest-ordering
+pydantic
+requests
