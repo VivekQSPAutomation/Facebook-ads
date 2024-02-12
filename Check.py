@@ -12,6 +12,7 @@ reve_url = "https://revgeocode.search.hereapi.com/v1/revgeocode"
 # api_key ="g0zRSDgjtC_muIy1CStyI_hVIMrFCbU63QezqpHMCAU"
 # api_key = "ZAZmrZPYHYsaqMqkX1-ecbVHgEbNNR0LHrTRC1OAGGM"
 api_key = "NtDdX1_GSnZn_4cH85mz14FYdGb9wO1zo0gCUcdzG8k"
+api_key = "APoeDVlycBIN7GS9lCYd2lBtz3-nV5YuwIKpNOOVo9U"
 
 def extract_coordinates(item):
     position = item.get('position')
