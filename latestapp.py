@@ -20,7 +20,7 @@ templates = Jinja2Templates(directory="templates")
 
 api_url = "https://geocode.search.hereapi.com/v1/geocode"
 reve_url = "https://revgeocode.search.hereapi.com/v1/revgeocode"
-api_key = "APoeDVlycBIN7GS9lCYd2lBtz3-nV5YuwIKpNOOVo9U"
+api_key = "oEZVAxUm0nfBQqOfxVSH91jOpP4B1HGtzpeeHREgXZo"
 
 def extract_coordinates(item):
     position = item.get('position')
@@ -28,16 +28,20 @@ def extract_coordinates(item):
 
 
 def generate_random_coordinates(center_lat, center_lon, radius_km, num_points):
+    csv_file ="Coordinates.csv"
     coordinates = []
-    for _ in range(num_points):
-        angle = random.uniform(0, 2 * math.pi)
-        new_lat = center_lat + (180 / math.pi) * (radius_km / 6371) * math.cos(angle)
-        new_lon = center_lon + (180 / math.pi) * (radius_km / 6371) * math.sin(angle)
+    with open(csv_file,'a', newline='') as csvfile:
+        fieldnames = ['Latitude', 'Longitude']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
 
-        print(new_lat, new_lon)
-        coordinates.append((new_lat, new_lon))
+        for _ in range(num_points):
+            angle = random.uniform(0, 2 * math.pi)
+            new_lat = center_lat + (180 / math.pi) * (radius_km / 6371) * math.cos(angle)
+            new_lon = center_lon + (180 / math.pi) * (radius_km / 6371) * math.sin(angle)
+            coordinates.append((new_lat, new_lon))
+            writer.writerow({'Latitude': new_lat, 'Longitude': new_lon})
     return coordinates
-
 
 async def make_api_request(url, params):
     async with httpx.AsyncClient() as client:
@@ -64,10 +68,6 @@ async def extend_zip_code_async(target_zip_code, api_key, extend_distance,num_po
 
     lat, lon = target_coord
     nearby_coordinates = generate_random_coordinates(lat, lon, extend_distance, num_points)
-
-
-def extend_coordinates():
-
     extended_zip_codes = []
 
     for coord in nearby_coordinates:
@@ -78,12 +78,11 @@ def extend_coordinates():
             if postal_code:
                 extended_zip_codes.append(postal_code)
             else:
-                logger.warning(f"Postal code not found for coordinates {coord}")
+                print(f"Postal code not found for coordinates {coord}")
         else:
-            logger.warning('No item to add')
+            print('No item to add')
 
     return extended_zip_codes
-
 
 
 
@@ -99,6 +98,7 @@ async def create_upload_file(request: Request,file: UploadFile = File(...), radi
     # Process the file and radius
     input_filename = 'temp_input_file.csv'
     output_filename = f'output_extend.csv'
+    lat_file ="lat_long.csv"
 
     with open(input_filename, 'wb') as buffer:
         shutil.copyfileobj(file.file, buffer)
@@ -107,19 +107,17 @@ async def create_upload_file(request: Request,file: UploadFile = File(...), radi
     with open(output_filename, 'w', newline='') as output_csvfile:
         reader = csv.DictReader(open(input_filename, 'r', newline=''))
         fieldnames = reader.fieldnames + ['ExtendedPostalCodes']
-        fieldnames = reader.fieldnames + ['Lat']
-        fieldnames = reader.fieldnames + ['Long']
         writer = csv.DictWriter(output_csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
         for i, row in enumerate(reader):
             target_zip = row['Zipcode']
             radius_km = radius * 1.60934
-            num_points = 5
-            extend_coordinate = await extend_zip_code_async(target_zip, api_key, extend_distance=radius_km, num_points=num_points)
+            num_points = 100
+            extended_zip_codes = await extend_zip_code_async(target_zip, api_key, extend_distance=radius_km, num_points=num_points)
 
-            if extend_coordinate:
-                row['lat'] = extend_coordinate
+            if extended_zip_codes:
+                row['ExtendedPostalCodes'] = extended_zip_codes
                 writer.writerow(row)
 
             time.sleep(1)
