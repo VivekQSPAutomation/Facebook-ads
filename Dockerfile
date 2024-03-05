@@ -26,4 +26,4 @@ RUN apt-get update && \
 ENV TERM xterm-256color
 
 # Command to run your application
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 4 --timeout 0 app:app

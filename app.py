@@ -1,24 +1,32 @@
 import os
-
 import requests
 import base64
 from bs4 import BeautifulSoup
 from weasyprint import HTML
-from flask import Flask, request, send_file
-from flask_cors import CORS
+from fastapi import FastAPI, Request, File, Form, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware
 
-app = Flask(__name__)
-CORS(app)
+app = FastAPI()
 
+# CORS middleware to allow cross-origin requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow requests from any origin
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 
-@app.route('/')
-def hello_world():
-    return "hello_world"
+@app.get('/')
+async def hello_world():
+    return {"message": "hello_world"}
 
+@app.post('/download_pdf')
+async def download_pdf(request: Request):
+    form = await request.form()
+    html_cont = form['html_content']
 
-@app.route('/download_pdf', methods=['POST'])
-def download_pdf():
-    html_cont = request.data.decode('utf-8')
     soup = BeautifulSoup(html_cont, 'html.parser')
     img_tags = soup.find_all('img')
 
@@ -83,7 +91,4 @@ def download_pdf():
     pdf_filename = f'{os.getcwd()}/Draft.pdf'
 
     HTML(string=html_content).write_pdf(pdf_filename)
-    return send_file(pdf_filename, as_attachment=True)
-
-if __name__ == "__main__":
-    app.run()
+    return FileResponse(pdf_filename, media_type='application/pdf')
