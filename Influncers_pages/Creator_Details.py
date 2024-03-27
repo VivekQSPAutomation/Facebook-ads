@@ -15,9 +15,7 @@ class CreatorPages(Basepages):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.driver.get(
-            f"{TestData.env_setup(self)}/partners/settings/blog-details"
-        )
+        self.driver.get(f"{TestData.env_setup(self)}/partners/settings/blog-details")
 
     def get_form_child(self):
         parent_form = self.driver.find_element(By.TAG_NAME, "form")
@@ -30,7 +28,7 @@ class CreatorPages(Basepages):
             time.sleep(2)
             for child in form_child:
                 if "mainUrl" in child.get_attribute("id"):
-                    self.get_clear((By.ID,child.get_attribute("id")))
+                    self.get_clear((By.ID, child.get_attribute("id")))
                     self.do_send_keys(
                         (By.ID, child.get_attribute("id")), "https://google.com"
                     )
@@ -65,4 +63,3 @@ class CreatorPages(Basepages):
                 return True
         except TimeoutException:
             return False
-

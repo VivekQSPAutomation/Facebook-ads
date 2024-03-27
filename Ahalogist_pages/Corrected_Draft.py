@@ -43,6 +43,7 @@ class Corrected_draft(Basepage):
         "//div[contains(text(),'Draft Locked')]/..//div[contains(., 'Type')]/following-sibling::div[@class='text']/span",
     )
     review_draft_tab = (By.XPATH, "(//div[@class='workspace-tabs']//div)[4]")
+
     def __init__(self, ses_init):
         super().__init__(ses_init)
         ses_init.get(f"{TestData.env_setup(self)}/job-tracker")

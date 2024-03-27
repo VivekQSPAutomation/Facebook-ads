@@ -82,7 +82,7 @@ class TestData:
     page_access_token = "EAAOmtky97ZA0BOxqrJTKp0k8V4jqrZAprrR2wHKhTaFHOku8UflcKwL7aFlLOc4lZA1qJdafjOQsp4UFSHlBFre2aHpULiG0hwqRZB6SoY5KrLCC0Gf8rNL7OOmz5UZA7mGpeilSas5ERVwzz3sWYiZCiGk9bnXPGOBkYZBro9ZCB8Jl1CMVAAz92M1ed55MO3tZC"
 
     def env_setup(self):
-        if os.environ.get('Env') == "Prod":
+        if os.environ.get("Env") == "Prod":
             return "https://platform.social.quotient.com"
         else:
             return "https://staging-platform.social.quotient.com"

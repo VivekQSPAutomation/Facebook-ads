@@ -15,7 +15,6 @@ class Test_performance:
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
     @pytest.mark.run(order=Order.Performance_dash)
-    def test_performance_influence(self, ses_init,request):
+    def test_performance_influence(self, ses_init, request):
         performance = self.performance_object(ses_init)
         performance.peformance_dashboard()
-

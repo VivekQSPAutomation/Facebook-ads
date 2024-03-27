@@ -11,9 +11,8 @@ class Test_Creator:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.high
     @pytest.mark.run(order=Order.creator_page)
-    def test_creator_details(self, ses_init,request):
+    def test_creator_details(self, ses_init, request):
 
         obj = CreatorPages(ses_init)
-        status =obj.get_creator_details()
+        status = obj.get_creator_details()
         assert status
-

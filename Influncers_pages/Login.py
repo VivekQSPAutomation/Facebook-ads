@@ -22,7 +22,7 @@ class Welcome_session(Basepages):
 
     def login_url_redirect_session(self):
         try:
-            df = pd.read_csv(f'{os.getcwd()}/influencers.csv')
+            df = pd.read_csv(f"{os.getcwd()}/influencers.csv")
             self.do_click(self.LOGIN_CLICKABLE)
             time.sleep(3)
             # if os.environ.get("Email"):
@@ -33,12 +33,12 @@ class Welcome_session(Basepages):
             #     self.do_send_keys(self.EMAIL, os.environ.get("Emai"))
             #     self.do_send_keys(self.PASSWORD, TestData.LOGIN_PASSWORD)
             #     self.do_click(self.SUBMIT_BUT)
-            if 'staging' in TestData.env_setup(self):
-                os.environ['Email'] = df['Influencer'].iloc[0]
-                self.do_send_keys(self.EMAIL, os.environ.get('Email'))
+            if "staging" in TestData.env_setup(self):
+                os.environ["Email"] = df["Influencer"].iloc[0]
+                self.do_send_keys(self.EMAIL, os.environ.get("Email"))
             else:
-                os.environ['Email'] = df['Influencer'].iloc[1]
-                self.do_send_keys(self.EMAIL,os.environ.get('Email'))
+                os.environ["Email"] = df["Influencer"].iloc[1]
+                self.do_send_keys(self.EMAIL, os.environ.get("Email"))
 
             self.do_send_keys(self.PASSWORD, TestData.LOGIN_PASSWORD)
 

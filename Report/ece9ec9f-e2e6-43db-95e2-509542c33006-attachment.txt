@@ -1,0 +1,5 @@
+[33mWARNING [0m root:abstractcrudobject.py:46 parent_id as a parameter of constructor is being deprecated.
+[33mWARNING [0m root:abstractcrudobject.py:243 `remote_create` is being deprecated, please update your code with new function.
+[33mWARNING [0m root:abstractcrudobject.py:139 parent_id is being deprecated.
+[33mWARNING [0m root:abstractcrudobject.py:109 parent_id is being deprecated.
+[33mWARNING [0m root:abstractcrudobject.py:109 parent_id is being deprecated.

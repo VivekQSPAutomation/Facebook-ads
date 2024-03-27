@@ -14,9 +14,7 @@ class NegativeCompensation_pages(Basepages):
 
     def __init__(self, driver):
         super().__init__(driver)
-        driver.get(
-            f"{TestData.env_setup(self)}/partners/settings/compensation"
-        )
+        driver.get(f"{TestData.env_setup(self)}/partners/settings/compensation")
 
     def get_form_child(self):
         parent_form = self.driver.find_element(By.TAG_NAME, "form")

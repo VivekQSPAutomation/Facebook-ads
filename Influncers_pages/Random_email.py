@@ -35,25 +35,47 @@ class Random_Email(Basepages):
 
     def random_email(self):
         try:
-            os.environ["Email"] = self.get_element_value(self.Email)
-            df = pd.read_csv(f'{os.getcwd()}/influencers.csv')
-            Influ = df['Influencer'].iloc[0]
-            if Influ == os.environ.get('Email'):
-                pass
-            else:
-                df['Influencer'].iloc[0] = os.environ.get('Email')
-                df.to_csv(f'{os.getcwd()}/influencers.csv', index=False)
+            if os.environ.get("Env") == "Prod":
+                os.environ["Email"] = self.get_element_value(self.Email)
+                df = pd.read_csv(f"{os.getcwd()}/influencers.csv")
+                Influ = df["Influencer"].iloc[1]
+                if Influ == os.environ.get("Email"):
+                    pass
+                else:
+                    df["Influencer"].iloc[1] = os.environ.get("Email")
+                    df.to_csv(f"{os.getcwd()}/influencers.csv", index=False)
 
-            # os.environ["Email"] = self.get_element_text(self.temp_mail)
-            if not os.environ.get("Email"):
-                self.driver.get("https://www.disposablemail.com/")
-                os.environ["Emai"] = self.get_element_text(self.temp_mail)
-                df['Influencer'].iloc[0] = os.environ.get('Emai')
-                df.to_csv(f'{os.getcwd()}/influencers.csv', index=False)
-                print(os.environ.get("Emai"))
-                return True
+                # os.environ["Email"] = self.get_element_text(self.temp_mail)
+                if not os.environ.get("Email"):
+                    self.driver.get("https://www.disposablemail.com/")
+                    os.environ["Emai"] = self.get_element_text(self.temp_mail)
+                    df["Influencer"].iloc[1] = os.environ.get("Emai")
+                    df.to_csv(f"{os.getcwd()}/influencers.csv", index=False)
+                    print(os.environ.get("Emai"))
+                    return True
+                else:
+                    return True
             else:
-                return True
+                os.environ["Email"] = self.get_element_value(self.Email)
+                df = pd.read_csv(f"{os.getcwd()}/influencers.csv")
+                Influ = df["Influencer"].iloc[0]
+                if Influ == os.environ.get("Email"):
+                    pass
+                else:
+                    df["Influencer"].iloc[0] = os.environ.get("Email")
+                    df.to_csv(f"{os.getcwd()}/influencers.csv", index=False)
+
+                # os.environ["Email"] = self.get_element_text(self.temp_mail)
+                if not os.environ.get("Email"):
+                    self.driver.get("https://www.disposablemail.com/")
+                    os.environ["Emai"] = self.get_element_text(self.temp_mail)
+                    df["Influencer"].iloc[0] = os.environ.get("Emai")
+                    df.to_csv(f"{os.getcwd()}/influencers.csv", index=False)
+                    print(os.environ.get("Emai"))
+                    return True
+                else:
+                    return True
+
         except TimeoutException:
             self.driver.get("https://www.disposablemail.com/")
             os.environ["Emai"] = self.get_element_text(self.temp_mail)

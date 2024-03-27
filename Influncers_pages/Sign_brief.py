@@ -27,17 +27,12 @@ class SignBrief(Basepages):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.driver.get(
-            f"{TestData.env_setup(self)}/workspace"
-        )
+        self.driver.get(f"{TestData.env_setup(self)}/workspace")
 
     def sign_brief(self, data):
         # self.do_click(self.Campaign)
         time.sleep(4)
-        if (
-                self.driver.current_url
-                != f"{TestData.env_setup(self)}/workspace"
-        ):
+        if self.driver.current_url != f"{TestData.env_setup(self)}/workspace":
             self.driver.get(f"{TestData.env_setup(self)}/workspace")
         else:
             pass
@@ -81,7 +76,7 @@ class SignBrief(Basepages):
 
                         start_x, start_y = 100, 100
                         end_x, end_y = 200, 200
-                        self.driver.save_screenshot(f'screenshots/{time.time()}.png')
+                        self.driver.save_screenshot(f"screenshots/{time.time()}.png")
                         time.sleep(20)
                         for _ in range(5):
                             action_chains = ActionChains(self.driver)
@@ -90,7 +85,7 @@ class SignBrief(Basepages):
                             ).click_and_hold().move_by_offset(
                                 end_x - start_x, end_y - start_y
                             ).release().perform()
-                        self.driver.save_screenshot(f'screenshots/{time.time()}.png')
+                        self.driver.save_screenshot(f"screenshots/{time.time()}.png")
                         self.do_click(self.Sign_button)
 
                         check = True
@@ -105,14 +100,10 @@ class SignBrief(Basepages):
                 if retry_count > 3:
                     return False
                 else:
-                    self.driver.get(
-                        f"{TestData.env_setup(self)}/workspace"
-                    )
+                    self.driver.get(f"{TestData.env_setup(self)}/workspace")
                 retry_count += 1
 
             if check:
                 break
 
-            count =+1
-
-
+            count = +1

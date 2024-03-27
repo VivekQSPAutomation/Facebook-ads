@@ -9,8 +9,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from Config.config import TestData
 from Ahalogist_pages.Basepage import Basepage
+from Config.config import TestData
 
 
 class AddtoQueue(Basepage):
@@ -115,7 +115,7 @@ class AddtoQueue(Basepage):
                         self.do_send_keys(
                             self.publish_date,
                             (
-                                    datetime.date.today() + datetime.timedelta(weeks=3)
+                                datetime.date.today() + datetime.timedelta(weeks=3)
                             ).strftime("%m/%d/%Y"),
                         )
                         time.sleep(3)
@@ -127,7 +127,7 @@ class AddtoQueue(Basepage):
                         )
                         self.scroll_to_add(Onboard)
                         time.sleep(2)
-                        Onboard.send_keys(Keys.TAB,Keys.ENTER)
+                        Onboard.send_keys(Keys.TAB, Keys.ENTER)
 
                         msg = (
                             WebDriverWait(self.driver, 30)
@@ -180,7 +180,7 @@ class AddtoQueue(Basepage):
                         self.do_send_keys(
                             self.publish_date,
                             (
-                                    datetime.date.today() + datetime.timedelta(weeks=3)
+                                datetime.date.today() + datetime.timedelta(weeks=3)
                             ).strftime("%m/%d/%Y"),
                         )
                         self.driver.find_element(

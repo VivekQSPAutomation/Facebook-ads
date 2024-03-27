@@ -1,8 +1,9 @@
-import os
-from  datetime import datetime as dt
 import datetime
+import os
 import secrets
 import string
+from datetime import datetime as dt
+
 import pandas as pd
 import requests
 from facebook_business.adobjects.adaccount import AdAccount
@@ -16,11 +17,11 @@ class Static_ads:
 
     def __init__(self):
         # Read the CSV file
-        df = pd.read_csv(f'{os.getcwd()}/fb_token.csv')
-        access_token = df['Token'].iloc[0]
-        created_date_str = df['created_date'].iloc[0]
+        df = pd.read_csv(f"{os.getcwd()}/fb_token.csv")
+        access_token = df["Token"].iloc[0]
+        created_date_str = df["created_date"].iloc[0]
         print(access_token, created_date_str)
-        created_date = dt.strptime(created_date_str, '%Y-%m-%d')
+        created_date = dt.strptime(created_date_str, "%Y-%m-%d")
         today = dt.now()
         days_diff = (today - created_date).days
         print(days_diff)
@@ -33,16 +34,15 @@ class Static_ads:
                 "grant_type": "fb_exchange_token",
                 "client_id": "1027726831906205",
                 "client_secret": "cfbcca04aa930c2b26d4926495a62d09",
-                "fb_exchange_token": access_token
+                "fb_exchange_token": access_token,
             }
             response = requests.get(exchange_url, params=params)
             new_access_token = response.json()["access_token"]
             print("New Access Token:", new_access_token)
-            df['Token'].iloc[0] = new_access_token
-            df['created_date'].iloc[0] = today.strftime('%Y-%m-%d')
-            df.to_csv(f'{os.getcwd()}/fb_token.csv', index=False)
+            df["Token"].iloc[0] = new_access_token
+            df["created_date"].iloc[0] = today.strftime("%Y-%m-%d")
+            df.to_csv(f"{os.getcwd()}/fb_token.csv", index=False)
             FacebookAdsApi.init(access_token=new_access_token)
-
 
     def create_campaignandadset(self, brandname):
         params = {
@@ -53,7 +53,9 @@ class Static_ads:
             "lifetime_budget": 8400,
         }
 
-        campaign_result = AdAccount(TestData.ad_account_id).create_campaign(params=params)
+        campaign_result = AdAccount(TestData.ad_account_id).create_campaign(
+            params=params
+        )
         print(campaign_result)
 
         today = datetime.datetime.today()
@@ -71,8 +73,14 @@ class Static_ads:
                 "targeting": {
                     "geo_locations": {"countries": ["US"]},
                     "publisher_platforms": ["facebook", "instagram"],
-                    'facebook_positions': ['feed', 'facebook_reels', 'story', 'marketplace', 'video_feeds'],
-                    'instagram_positions': ['story', 'stream', 'explore', 'reels'],
+                    "facebook_positions": [
+                        "feed",
+                        "facebook_reels",
+                        "story",
+                        "marketplace",
+                        "video_feeds",
+                    ],
+                    "instagram_positions": ["story", "stream", "explore", "reels"],
                 },
                 "start_time": start_time,
                 "end_time": end_time,
@@ -80,7 +88,7 @@ class Static_ads:
         )
 
         adset.remote_create(params={"status": "PAUSED"})
-        return adset['id']
+        return adset["id"]
 
     def create_Ads(self, adset, brandname, image_url):
         params = {
@@ -120,24 +128,25 @@ class Static_ads:
 
         AdAccount(TestData.ad_account_id).create_ad(params=params)
 
-        preview = self.preview_ads(adcreative=adcreative['id'])
+        preview = self.preview_ads(adcreative=adcreative["id"])
         return preview
 
     def preview_ads(self, adcreative):
-        ad_format = 'DESKTOP_FEED_STANDARD'
-        api_endpoint = f'https://graph.facebook.com/v18.0/{adcreative}/previews'
+        ad_format = "DESKTOP_FEED_STANDARD"
+        api_endpoint = f"https://graph.facebook.com/v18.0/{adcreative}/previews"
         api_params = {
-            'ad_format': ad_format,
-            'access_token': TestData.access_token,
+            "ad_format": ad_format,
+            "access_token": TestData.access_token,
         }
         response = requests.get(api_endpoint, params=api_params)
         data = response.json()
-        preview_url = data.get('data', [{}])[0].get('body')
+        preview_url = data.get("data", [{}])[0].get("body")
 
         return preview_url
 
+
 #
-if __name__ == '__main__':
+if __name__ == "__main__":
     static = Static_ads()
     ad_set = static.create_campaignandadset(brandname="")
     static.create_Ads(ad_set, brandname="", image_url="")

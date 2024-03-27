@@ -11,9 +11,8 @@ class Test_Compensation:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.high
     @pytest.mark.run(order=Order.compensation)
-    def test_compensation_details(self, ses_init,request):
+    def test_compensation_details(self, ses_init, request):
 
         obj = Compensation_pages(ses_init)
-        status =obj.get_compensation_details()
+        status = obj.get_compensation_details()
         assert status
-

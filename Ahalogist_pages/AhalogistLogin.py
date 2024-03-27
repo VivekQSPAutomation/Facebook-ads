@@ -23,10 +23,7 @@ class Welcome_session(Basepage):
         self.do_send_keys(self.PASSWORD, TestData.Aha_login_password)
         self.do_click(self.SUBMIT_BUT)
         time.sleep(3)
-        if (
-            self.driver.current_url
-            == f"{TestData.env_setup(self)}/signup"
-        ):
+        if self.driver.current_url == f"{TestData.env_setup(self)}/signup":
             return False
         else:
             return True

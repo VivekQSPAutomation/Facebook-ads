@@ -21,10 +21,10 @@ def ses_init(request):
     options.add_experimental_option("prefs", prefs)
     exc_env = request.config.getoption("--exc")
     env = request.config.getoption("--env")
-    os.environ['Env'] = env
+    os.environ["Env"] = env
     if exc_env:
         options.add_argument(f"{exc_env}")
-        options.add_argument('--window-size=1400,1080')
+        options.add_argument("--window-size=1400,1080")
 
     # options.add_argument("--start-maximized")
     # options.add_argument("--window-size=1400,1080")
@@ -34,9 +34,6 @@ def ses_init(request):
 
     yield driver
     driver.quit()
-
-
-
 
 
 def pytest_runtest_makereport(item, call):
@@ -51,8 +48,6 @@ def pytest_runtest_makereport(item, call):
 
             # Capture a screenshot using Selenium and save it
             ses_init.save_screenshot(screenshot_path)
-
-
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
@@ -70,7 +65,7 @@ def pytest_runtest_makereport(item, call):
                 )
 
                 browser_logs = ses_init.get_log("browser")
-                error_logs = [log for log in browser_logs if log['level'] == 'SEVERE']
+                error_logs = [log for log in browser_logs if log["level"] == "SEVERE"]
 
                 # Attach filtered browser console log
                 allure.attach(
@@ -79,7 +74,9 @@ def pytest_runtest_makereport(item, call):
                     attachment_type=allure.attachment_type.TEXT,
                 )
             except Exception as e:
-                print(f"Failed to capture screenshot, console log, and network request URLs: {e}")
+                print(
+                    f"Failed to capture screenshot, console log, and network request URLs: {e}"
+                )
 
 
 def pytest_runtest_logreport(report):

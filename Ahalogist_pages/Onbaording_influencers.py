@@ -3,7 +3,7 @@ import os
 import time
 from datetime import date
 
-from selenium.common import TimeoutException, StaleElementReferenceException
+from selenium.common import StaleElementReferenceException, TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
@@ -95,7 +95,7 @@ class onboardInfluencers(Basepage):
                         self.do_send_keys(
                             self.publish_date,
                             (
-                                    datetime.date.today() + datetime.timedelta(weeks=3)
+                                datetime.date.today() + datetime.timedelta(weeks=3)
                             ).strftime("%m/%d/%Y"),
                         )
                         time.sleep(2)
@@ -105,7 +105,7 @@ class onboardInfluencers(Basepage):
                         time.sleep(1)
                         self.driver.find_element(
                             By.XPATH, "//input[@id ='content-cost']"
-                        ).send_keys(Keys.TAB,Keys.TAB,Keys.ENTER)
+                        ).send_keys(Keys.TAB, Keys.TAB, Keys.ENTER)
                         # if line_count == 1:
                         #     check = self.error_check()
                         #     if check:
@@ -139,7 +139,6 @@ class onboardInfluencers(Basepage):
                                 line for line in self.get_elements(self.line_item_type)
                             ]
 
-
                         # self.scroll_to_line(self.get_element(self.Scroll_to_element))
                         self.do_click(
                             (
@@ -158,7 +157,7 @@ class onboardInfluencers(Basepage):
                         self.do_send_keys(
                             self.publish_date,
                             (
-                                    datetime.date.today() + datetime.timedelta(weeks=3)
+                                datetime.date.today() + datetime.timedelta(weeks=3)
                             ).strftime("%m/%d/%Y"),
                         )
                         time.sleep(2)
@@ -198,7 +197,8 @@ class onboardInfluencers(Basepage):
         error_msg = (
             WebDriverWait(self.driver, 15)
             .until(EC.visibility_of_element_located(self.error_Onboard_msg))
-            .text)
+            .text
+        )
         print(error_msg)
         if error_msg:
             return True

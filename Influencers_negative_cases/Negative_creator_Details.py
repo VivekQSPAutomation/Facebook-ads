@@ -14,9 +14,7 @@ class NegativeCreatorPages(Basepages):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.driver.get(
-            f"{TestData.env_setup(self)}/partners/settings/blog-details"
-        )
+        self.driver.get(f"{TestData.env_setup(self)}/partners/settings/blog-details")
 
     def get_form_child(self):
         parent_form = self.driver.find_element(By.TAG_NAME, "form")

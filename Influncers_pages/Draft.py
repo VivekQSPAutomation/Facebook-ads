@@ -9,8 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 from Config.config import TestData
-from Influncers_pages.facebook_ads.Staticads import Static_ads
 from Influncers_pages.BasePages import Basepages
+from Influncers_pages.facebook_ads.Staticads import Static_ads
 
 
 class Draft(Basepages):
@@ -31,15 +31,13 @@ class Draft(Basepages):
     Video_title = (By.XPATH, "//input[@id='title']")
     h3_data = (By.XPATH, "//h3[text()]")
     image_url = (By.XPATH, "//div[@id='editor']//p//img")
-    campaign =(By.XPATH,"//div[@class='brandableIconAndTitle']//div[2]//div")
-    type =(By.XPATH,"//div[@class='brandableIconAndTitle']//div[2]//h1")
-    video_click = (By.XPATH,"(//div[@class='sideBarOptions ']//div)[3]")
-    image_click = (By.XPATH,"(//div[@class='sideBarOptions ']//div)[2]")
-    Copy_button= (By.XPATH,"//div[@title='Copy video link']")
-    Copy_url =( By.XPATH,"//div[contains(text(),' Copy Video Link')]")
-    Copied_url =( By.XPATH,"//div[@class='wrapper application-generic-dropdown']//div")
-
-
+    campaign = (By.XPATH, "//div[@class='brandableIconAndTitle']//div[2]//div")
+    type = (By.XPATH, "//div[@class='brandableIconAndTitle']//div[2]//h1")
+    video_click = (By.XPATH, "(//div[@class='sideBarOptions ']//div)[3]")
+    image_click = (By.XPATH, "(//div[@class='sideBarOptions ']//div)[2]")
+    Copy_button = (By.XPATH, "//div[@title='Copy video link']")
+    Copy_url = (By.XPATH, "//div[contains(text(),' Copy Video Link')]")
+    Copied_url = (By.XPATH, "//div[@class='wrapper application-generic-dropdown']//div")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -111,23 +109,30 @@ class Draft(Basepages):
                             self.do_send_keys(self.Edit_update, text)
                             self.do_send_keys(self.Edit_update, Keys.ENTER)
                             time.sleep(8)
-                            self.driver.execute_script("arguments[0].click();", self.get_element(self.image_click))
+                            self.driver.execute_script(
+                                "arguments[0].click();",
+                                self.get_element(self.image_click),
+                            )
                             # self.do_click(self.image_click)
                             self.do_click(self.photo_click)
                             image = self.get_element(self.image_url)
-                            image_url = image.get_attribute('src')
+                            image_url = image.get_attribute("src")
                             static = Static_ads()
-                            ad_set = static.create_campaignandadset(brandname=campaign_name)
-                            preview = static.create_Ads(ad_set, brandname=campaign_name,image_url=image_url)
+                            ad_set = static.create_campaignandadset(
+                                brandname=campaign_name
+                            )
+                            preview = static.create_Ads(
+                                ad_set, brandname=campaign_name, image_url=image_url
+                            )
                             src_match = re.search(r'src="(.*?)"', preview)
                             if src_match:
-                                os.environ['preview'] = src_match.group(1)
+                                os.environ["preview"] = src_match.group(1)
 
                             else:
                                 print("No 'src' attribute found in the iframe.")
                             self.do_click(self.review_send)
                             time.sleep(8)
-                            print(os.environ.get('preview'))
+                            print(os.environ.get("preview"))
                             status = True
                             break
 

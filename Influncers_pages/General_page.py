@@ -18,9 +18,7 @@ class Homepages(Basepages):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.driver.get(
-            f"{TestData.env_setup(self)}/partners/settings/general"
-        )
+        self.driver.get(f"{TestData.env_setup(self)}/partners/settings/general")
 
     def influence_profile_setting(self):
         try:
@@ -35,9 +33,9 @@ class Homepages(Basepages):
                 child_select = form_select.find_elements(By.TAG_NAME, "select")[1]
                 Select(child_select).select_by_value("Alabama")
                 after_form_select = self.driver.find_element(By.TAG_NAME, "form")
-                after_child_select = after_form_select.find_elements(By.TAG_NAME, "input")[
-                    6
-                ]
+                after_child_select = after_form_select.find_elements(
+                    By.TAG_NAME, "input"
+                )[6]
                 self.get_clear((By.ID, after_child_select.get_attribute("id")))
                 self.driver.find_element(
                     By.ID, after_child_select.get_attribute("id")
@@ -45,9 +43,9 @@ class Homepages(Basepages):
             for child in child_input:
                 if "Pronunciation" in child.get_attribute("id"):
                     self.get_clear((By.ID, child.get_attribute("id")))
-                    self.driver.find_element(By.ID, child.get_attribute("id")).send_keys(
-                        "please fill your Pronunciation"
-                    )
+                    self.driver.find_element(
+                        By.ID, child.get_attribute("id")
+                    ).send_keys("please fill your Pronunciation")
                 elif "zip" in child.get_attribute("id"):
 
                     pass
@@ -70,16 +68,16 @@ class Homepages(Basepages):
                         ).send_keys("Testing QA")
                 elif child.get_attribute("type") == "tel":
                     self.get_clear((By.ID, child.get_attribute("id")))
-                    self.driver.find_element(By.ID, child.get_attribute("id")).send_keys(
-                        "1234"
-                    )
+                    self.driver.find_element(
+                        By.ID, child.get_attribute("id")
+                    ).send_keys("1234")
                 elif child.get_attribute("value") == "false":
                     pass
                 else:
                     self.get_clear((By.ID, child.get_attribute("id")))
-                    self.driver.find_element(By.ID, child.get_attribute("id")).send_keys(
-                        "Testing"
-                    )
+                    self.driver.find_element(
+                        By.ID, child.get_attribute("id")
+                    ).send_keys("Testing")
 
             self.driver.find_element(By.XPATH, "//button[@default='Save']").send_keys(
                 Keys.RETURN
@@ -103,5 +101,3 @@ class Homepages(Basepages):
                 return False
         except TimeoutException:
             return False
-
-

@@ -1,0 +1,1 @@
+[{'level': 'SEVERE', 'message': "https://staging-platform.social.quotient.com/assets/hart-06f50e590dc4bfa4b0aec6e73dfffa35.js 9411:79 Uncaught TypeError: Cannot read properties of undefined (reading 'top')", 'source': 'javascript', 'timestamp': 1711558779977}]

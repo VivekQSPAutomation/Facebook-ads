@@ -28,15 +28,19 @@ class Capabilities_pages(Basepages):
                 self.do_click(
                     (
                         By.XPATH,
-                        "//input[@id='{}']/..".format(form_child[0].get_attribute("id")),
+                        "//input[@id='{}']/..".format(
+                            form_child[0].get_attribute("id")
+                        ),
                     )
                 )
                 sub_parent_child = self.get_form_child()
                 time.sleep(4)
                 for sub_child in sub_parent_child[2:]:
                     if sub_child.get_attribute("type") == "text":
-                        self.get_clear((By.ID,sub_child.get_attribute("id")))
-                        self.do_send_keys((By.ID, sub_child.get_attribute("id")), "Testing")
+                        self.get_clear((By.ID, sub_child.get_attribute("id")))
+                        self.do_send_keys(
+                            (By.ID, sub_child.get_attribute("id")), "Testing"
+                        )
                     elif sub_child.get_attribute("value") == "true":
                         self.do_click(
                             (
@@ -68,4 +72,3 @@ class Capabilities_pages(Basepages):
                 return False
         except TimeoutException:
             return False
-

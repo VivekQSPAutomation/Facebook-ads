@@ -16,12 +16,10 @@ class Test_Sign_brief:
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
     @pytest.mark.run(order=Order.Sign_brief)
-    def test_sign_brief(self, ses_init, test_data,request):
+    def test_sign_brief(self, ses_init, test_data, request):
         obj = SignBrief(ses_init)
         status = obj.sign_brief(test_data)
-        if  status is None:
+        if status is None:
             assert True
         else:
             assert False
-
-

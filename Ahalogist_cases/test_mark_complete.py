@@ -30,4 +30,3 @@ class Test_Mark_Complete:
         # aha_stop_screen_record(screen)
         # aha_video_creation_from_screenshots(request.node.name)
         assert status
-

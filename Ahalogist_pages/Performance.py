@@ -31,7 +31,7 @@ class Performance(Basepages):
     )
     download_button = (By.XPATH, "//a[contains(text(),'Download CSV')]")
     campaign_search = (By.XPATH, "//input[@id='campaignSearchInput']")
-    campaign_name = (By.XPATH,"//div[@class='text campaignName']")
+    campaign_name = (By.XPATH, "//div[@class='text campaignName']")
 
     def __init__(self, ses_init):
         super().__init__(ses_init)
@@ -41,7 +41,7 @@ class Performance(Basepages):
         Add = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.Search_item)
         )
-        if os.environ.get('Env') == "Prod":
+        if os.environ.get("Env") == "Prod":
             Add.send_keys(f"{TestData.Campaign_prod_name}", Keys.ENTER)
         else:
             Add.send_keys(f"{TestData.Campaign_performance_name}", Keys.ENTER)
@@ -56,9 +56,7 @@ class Performance(Basepages):
             except ValueError:
                 continue
         print(dates_found)
-        self.driver.get(
-            f"{TestData.env_setup(self)}/campaigns/dashboard"
-        )
+        self.driver.get(f"{TestData.env_setup(self)}/campaigns/dashboard")
         self.do_click(self.Date_selection)
         self.get_clear(self.start_Date)
         self.do_send_keys(self.start_Date, dates_found[1])

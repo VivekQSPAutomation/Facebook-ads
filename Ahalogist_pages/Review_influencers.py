@@ -10,9 +10,15 @@ class ReviewInflu(Basepage):
     search_influence = (By.XPATH, "//input[@id='searchInput']")
     Dots = (By.XPATH, "//div[@class='container    ']//div[@class='dots']")
     finished_tab = (By.XPATH, "(//div[@class='workspace-tabs']//div)[6]")
-    review_button = (By.XPATH, "//div[@class='container    ']//button[contains(text(),'Review')]")
+    review_button = (
+        By.XPATH,
+        "//div[@class='container    ']//button[contains(text(),'Review')]",
+    )
     rating = (By.XPATH, "//div[@class='rating']//div[@class='star-rating-widget']")
-    Submit = (By.XPATH, "//div[@class='buttonContainer']//button[contains(text(),'Submit')]")
+    Submit = (
+        By.XPATH,
+        "//div[@class='buttonContainer']//button[contains(text(),'Submit')]",
+    )
 
     def __init__(self, ses_init):
         super().__init__(ses_init)
@@ -33,7 +39,7 @@ class ReviewInflu(Basepage):
             base_xpath = f"(//div[@class='rating']//div[@class='star-rating-widget'])"
             element = self.get_element((By.XPATH, f"({base_xpath}//div[3])[{count}]"))
             ActionChains(self.driver).move_to_element(element).click().perform()
-            count +=1
+            count += 1
         self.do_click(self.Submit)
         time.sleep(8)
         assert True

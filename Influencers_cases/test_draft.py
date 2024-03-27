@@ -16,7 +16,7 @@ class Test_Draft:
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
     @pytest.mark.run(order=Order.Draft)
-    def test_draft(self, ses_init, test_data,request):
+    def test_draft(self, ses_init, test_data, request):
 
         obj = Draft(ses_init)
         status = obj.edit_draft(test_data)
@@ -24,4 +24,3 @@ class Test_Draft:
             assert True
         else:
             assert False
-

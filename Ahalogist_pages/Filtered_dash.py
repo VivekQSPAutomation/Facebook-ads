@@ -22,7 +22,10 @@ class Filter(Basepage):
     dashboard_name = (By.XPATH, "//input[@id='name']")
     mediabudget = (By.XPATH, "//input[@id='mediaBudget']")
     imp_count = (By.XPATH, "//input[@id='impressionGoal']")
-    social_influencer = (By.XPATH, "//span[contains(text(),'Social Influencer')]/../input")
+    social_influencer = (
+        By.XPATH,
+        "//span[contains(text(),'Social Influencer')]/../input",
+    )
     total_enagage = (By.XPATH, "//span[contains(text(),'Total Engagements')]/../input")
     total_click = (By.XPATH, "//span[contains(text(),'Total Clicks')]/../input")
     click_through = (By.XPATH, "//span[contains(text(),'Click Through Rate')]/../input")
@@ -55,15 +58,30 @@ class Filter(Basepage):
         self.do_send_keys(self.mediabudget, TestData.mediaBudget)
         self.get_clear(self.imp_count)
         self.do_send_keys(self.imp_count, TestData.imp_count)
-        social_influencers = self.driver.find_element(By.XPATH,"(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[1]")
+        social_influencers = self.driver.find_element(
+            By.XPATH,
+            "(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[1]",
+        )
         self.driver.execute_script("arguments[0].click();", social_influencers)
-        total_enagagement = self.driver.find_element(By.XPATH,"(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[3]")
+        total_enagagement = self.driver.find_element(
+            By.XPATH,
+            "(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[3]",
+        )
         self.driver.execute_script("arguments[0].click();", total_enagagement)
-        total_clicks = self.driver.find_element(By.XPATH,"(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[4]")
+        total_clicks = self.driver.find_element(
+            By.XPATH,
+            "(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[4]",
+        )
         self.driver.execute_script("arguments[0].click();", total_clicks)
-        click_through = self.driver.find_element(By.XPATH,"(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[5]")
+        click_through = self.driver.find_element(
+            By.XPATH,
+            "(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[5]",
+        )
         self.driver.execute_script("arguments[0].click();", click_through)
-        enagagement_rate = self.driver.find_element(By.XPATH,"(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[6]")
+        enagagement_rate = self.driver.find_element(
+            By.XPATH,
+            "(//div[contains(@class, 'relative')]//input[@type='checkbox'][1])[6]",
+        )
         self.driver.execute_script("arguments[0].click();", enagagement_rate)
         self.do_click(self.Save)
         msg_value = (

@@ -30,5 +30,5 @@ class Test_reportemail:
                   <a href='{os.environ.get('preview')}' target='_blank'>Facebook Preview Link</a>
                 </body>
                 </html>
-            """
+            """,
         )

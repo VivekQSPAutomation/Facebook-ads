@@ -35,17 +35,17 @@ class Signup(Basepages):
                             By.XPATH, "//span[@class='yesAccept']/div/label"
                         ).click()
                     elif node.get_attribute("type") == "text":
-                        self.driver.find_element(By.ID, node.get_attribute("id")).send_keys(
-                            "Testing"
-                        )
+                        self.driver.find_element(
+                            By.ID, node.get_attribute("id")
+                        ).send_keys("Testing")
                     elif node.get_attribute("type") == "password":
-                        self.driver.find_element(By.ID, node.get_attribute("id")).send_keys(
-                            "vivek@123"
-                        )
+                        self.driver.find_element(
+                            By.ID, node.get_attribute("id")
+                        ).send_keys("vivek@123")
                     else:
-                        self.driver.find_element(By.ID, node.get_attribute("id")).send_keys(
-                            os.environ.get("Email")
-                        )
+                        self.driver.find_element(
+                            By.ID, node.get_attribute("id")
+                        ).send_keys(os.environ.get("Email"))
 
                 self.do_click(self.BUTTON_CLICK)
                 assert True, "Login Successful"
@@ -56,17 +56,17 @@ class Signup(Basepages):
                             By.XPATH, "//span[@class='yesAccept']/div/label"
                         ).click()
                     elif node.get_attribute("type") == "text":
-                        self.driver.find_element(By.ID, node.get_attribute("id")).send_keys(
-                            "Testing"
-                        )
+                        self.driver.find_element(
+                            By.ID, node.get_attribute("id")
+                        ).send_keys("Testing")
                     elif node.get_attribute("type") == "password":
-                        self.driver.find_element(By.ID, node.get_attribute("id")).send_keys(
-                            "vivek@123"
-                        )
+                        self.driver.find_element(
+                            By.ID, node.get_attribute("id")
+                        ).send_keys("vivek@123")
                     else:
-                        self.driver.find_element(By.ID, node.get_attribute("id")).send_keys(
-                            os.environ.get("Emai")
-                        )
+                        self.driver.find_element(
+                            By.ID, node.get_attribute("id")
+                        ).send_keys(os.environ.get("Emai"))
 
                 self.do_click(self.BUTTON_CLICK)
 
@@ -78,4 +78,3 @@ class Signup(Basepages):
 
         except TimeoutException:
             return False
-

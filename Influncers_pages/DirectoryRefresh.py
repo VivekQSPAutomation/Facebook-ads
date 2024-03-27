@@ -13,6 +13,6 @@ def remove_files_in_directory(directory_path):
         print(f"Error removing files: {e}")
 
 
-lis = ["/Report", "/Downloads","/Influ_downloads"]
+lis = ["/Report", "/Downloads", "/Influ_downloads"]
 for _ in lis:
     remove_files_in_directory(os.getcwd() + _)

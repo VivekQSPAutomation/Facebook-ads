@@ -16,6 +16,8 @@ def test_data(request):
 @pytest.fixture(params=[TestData.Campaign_prod_name])
 def test_prod_data(request):
     return request.param
+
+
 class Test_remove:
     def remove_object(self, ses_init):
         self.remove = Remove_Influence(ses_init)
@@ -30,7 +32,7 @@ class Test_remove:
         # remove_files_in_directory(f"{os.getcwd()}/screenshots")
         # screen = aha_recording_and_capturing_screen(ses_init, request.node.name)
         remove = self.remove_object(ses_init)
-        if os.environ.get('Env') == "Prod":
+        if os.environ.get("Env") == "Prod":
             status = remove.remove_influence(test_prod_data)
         else:
             status = remove.remove_influence(test_data)

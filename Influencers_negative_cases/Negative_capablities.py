@@ -14,9 +14,7 @@ class NegativeCapabilities_pages(Basepages):
 
     def __init__(self, driver):
         super().__init__(driver)
-        driver.get(
-            f"{TestData.env_setup(self)}/partners/settings/capablities"
-        )
+        driver.get(f"{TestData.env_setup(self)}/partners/settings/capablities")
 
     def get_form_child(self):
         time.sleep(3)

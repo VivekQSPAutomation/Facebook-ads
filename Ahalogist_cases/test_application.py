@@ -40,4 +40,3 @@ class Test_Application:
         status = app_create.Create_application()
         # aha_stop_screen_record(screen)
         # aha_video_creation_from_screenshots(request.node.name)
-

@@ -34,4 +34,3 @@ class DeleteApplication(Basepage):
                     EC.visibility_of_element_located(self.Click_yes)
                 ).click()
                 time.sleep(10)
-

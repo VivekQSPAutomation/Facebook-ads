@@ -1,6 +1,6 @@
 import time
 
-from selenium.webdriver import Keys, ActionChains
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -25,8 +25,10 @@ class Opp(Basepage):
     )
     Savenclose = (By.XPATH, "//button[contains(text(),'Save And Close')]")
     cancel = (By.XPATH, "//button[contains(text(),'Cancel')]")
-    campaign_price = (By.XPATH,
-                      "//div[@class='sf-opportunities-details']//p[contains(text(),'Campaign Price')]/..//p[@class='text text--uppercase']")
+    campaign_price = (
+        By.XPATH,
+        "//div[@class='sf-opportunities-details']//p[contains(text(),'Campaign Price')]/..//p[@class='text text--uppercase']",
+    )
 
     def __init__(self, ses_init):
         super().__init__(ses_init)
@@ -56,7 +58,6 @@ class Opp(Basepage):
         time.sleep(5)
         self.do_send_keys_tab(self.Selecting_category, "", Keys.TAB, Keys.ENTER)
 
-
         msg_value = (
             WebDriverWait(self.driver, 20)
             .until(
@@ -74,8 +75,6 @@ class Opp(Basepage):
             return True
         else:
             return False
-
-
 
     def scroll_to_end(self):
         document_height = self.driver.execute_script(

@@ -26,9 +26,8 @@ class Test_Social:
     @pytest.mark.run(order=Order.pinterest_login)
     def test_pinterest_author(self, ses_init):
         obj = Social_pages(ses_init)
-        status  = obj.pinterest_author()
+        status = obj.pinterest_author()
         assert status
-
 
         time.sleep(5)
 
@@ -49,4 +48,3 @@ class Test_Social:
     def test_next_button(self, ses_init):
         obj = Social_pages(ses_init)
         obj.next_button()
-

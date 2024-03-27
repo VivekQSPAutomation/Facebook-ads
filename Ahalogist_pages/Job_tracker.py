@@ -44,11 +44,9 @@ class Job_tracker(Basepage):
 
     def __init__(self, ses_init):
         super().__init__(ses_init)
-        ses_init.get(
-            f"{TestData.env_setup(self)}/campaigns/editor?state=campaign"
-        )
+        ses_init.get(f"{TestData.env_setup(self)}/campaigns/editor?state=campaign")
 
-    def create_campaign(self,data):
+    def create_campaign(self, data):
         time.sleep(5)
         # if data == "Q263199":
         self.do_send_keys(self.Campaign_name, "Test" + "_" + str(date.today()))

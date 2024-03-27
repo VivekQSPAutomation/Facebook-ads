@@ -3,7 +3,7 @@ import subprocess
 
 class ReportCreation:
     def run_allure_generate(self, report_dir, output_dir):
-        allure_command = ["allure", "generate", report_dir,  "-o", output_dir, "--clean"]
+        allure_command = ["allure", "generate", report_dir, "-o", output_dir, "--clean"]
         print(allure_command)
         try:
             subprocess.run(allure_command, check=True)

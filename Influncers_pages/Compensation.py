@@ -29,7 +29,7 @@ class Compensation_pages(Basepages):
                     child.get_attribute("type") != "radio"
                     and child.get_attribute("type") != "number"
                 ):
-                    self.get_clear((By.ID,child.get_attribute("id")))
+                    self.get_clear((By.ID, child.get_attribute("id")))
                     self.do_send_keys((By.ID, child.get_attribute("id")), "12")
                     time.sleep(1)
 
@@ -55,8 +55,7 @@ class Compensation_pages(Basepages):
 
                 self.do_click(self.Next_Button)
                 return True
-            else :
+            else:
                 return False
         except TimeoutException:
             return False
-

@@ -11,11 +11,8 @@ class Test_Home:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.high
     @pytest.mark.run(order=Order.general_pages)
-    def test_influences_profile_setting(self, ses_init,request):
+    def test_influences_profile_setting(self, ses_init, request):
 
         obj = Homepages(ses_init)
-        status  = obj.influence_profile_setting()
+        status = obj.influence_profile_setting()
         assert status
-
-
-

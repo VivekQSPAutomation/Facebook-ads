@@ -33,5 +33,3 @@ class Test_onboard:
             assert True
         else:
             assert False
-
-

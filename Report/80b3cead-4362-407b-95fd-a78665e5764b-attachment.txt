@@ -1,1 +1,0 @@
-[{'level': 'SEVERE', 'message': 'https://ahalogy.auth0.com/favicon.ico - Failed to load resource: the server responded with a status of 404 ()', 'source': 'network', 'timestamp': 1711542812959}]

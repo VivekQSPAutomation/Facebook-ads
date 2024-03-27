@@ -68,5 +68,3 @@ class MarkComplete(Basepage):
         self.do_send_keys(self.completed_comment, "Testing QA", Keys.TAB, Keys.ENTER)
         time.sleep(15)
         return True
-
-

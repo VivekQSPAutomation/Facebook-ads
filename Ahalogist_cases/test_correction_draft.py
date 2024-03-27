@@ -33,4 +33,3 @@ class Test_CorrectionDraft:
             assert True
         else:
             assert False
-

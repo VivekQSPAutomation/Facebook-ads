@@ -45,9 +45,7 @@ class Social_pages(Basepages):
 
     def __init__(self, ses_init):
         super().__init__(ses_init)
-        self.driver.get(
-            f"{TestData.env_setup(self)}/partners/settings/social"
-        )
+        self.driver.get(f"{TestData.env_setup(self)}/partners/settings/social")
 
     def social_pages(self):
         self.do_click(self.Social_sidebar)
@@ -124,9 +122,7 @@ class Social_pages(Basepages):
                 self.do_click(self.pin_allow)
                 break
             except TimeoutException:
-                self.driver.get(
-                    f"{TestData.env_setup(self)}/partners/settings/social"
-                )
+                self.driver.get(f"{TestData.env_setup(self)}/partners/settings/social")
                 self.do_click(self.pinterest)
                 print(
                     WebDriverWait(self.driver, 10)
@@ -138,13 +134,13 @@ class Social_pages(Basepages):
                     .is_displayed()
                 )
                 if (
-                        WebDriverWait(self.driver, 10)
-                                .until(
-                            EC.visibility_of_element_located(
-                                (By.XPATH, "//div[contains(text(),'Give access')]")
-                            )
+                    WebDriverWait(self.driver, 10)
+                    .until(
+                        EC.visibility_of_element_located(
+                            (By.XPATH, "//div[contains(text(),'Give access')]")
                         )
-                                .is_displayed()
+                    )
+                    .is_displayed()
                 ):
                     WebDriverWait(self.driver, 10).until(
                         EC.visibility_of_element_located(
@@ -216,9 +212,7 @@ class Social_pages(Basepages):
         except TimeoutException:
             return False
         except AssertionError as e:
-            self.driver.get(
-                f"{TestData.env_setup(self)}/partners/settings/social?"
-            )
+            self.driver.get(f"{TestData.env_setup(self)}/partners/settings/social?")
 
     def next_button(self):
         self.do_click(self.Next_button)

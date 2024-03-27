@@ -19,14 +19,12 @@ class Influence_Application(Basepages):
     input_yes_value = (By.XPATH, "//input[@type='radio']/../..")
     textarea = (By.TAG_NAME, "textarea")
     send_proposal = (By.XPATH, "//button[contains(text(),'Send Proposal')]")
-    brand_name = (By.XPATH,"//div[@class='ql-editor']//ul[1]//li[1]")
-    retailer_name = (By.XPATH,"//div[@class='ql-editor']//ul[1]//li[3]")
+    brand_name = (By.XPATH, "//div[@class='ql-editor']//ul[1]//li[1]")
+    retailer_name = (By.XPATH, "//div[@class='ql-editor']//ul[1]//li[3]")
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.driver.get(
-            f"{TestData.env_setup(self)}/applications/dashboard"
-        )
+        self.driver.get(f"{TestData.env_setup(self)}/applications/dashboard")
 
     def input_with_yes(self):
         parent_form = self.driver.find_element(By.TAG_NAME, "form")

@@ -4,7 +4,6 @@ from datetime import date
 
 import allure
 import pytest
-import urllib3
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -22,19 +21,23 @@ def ses_init(request):
     prefs = f"{os.getcwd()}/Influ_downloads"
     exc_env = request.config.getoption("--exc")
     env = request.config.getoption("--env")
-    os.environ['Env'] = env
-    print(os.environ.get('Env'))
+    os.environ["Env"] = env
+    print(os.environ.get("Env"))
     if exc_env:
         chrome_options.add_argument(f"{exc_env}")
         chrome_options.add_argument("--window-size=1400,1080")
-    chrome_options.add_experimental_option("prefs", {
-        "download.default_directory": prefs,
-        "download.prompt_for_download": False,
-        "download.directory_upgrade": True
-    })
+    chrome_options.add_experimental_option(
+        "prefs",
+        {
+            "download.default_directory": prefs,
+            "download.prompt_for_download": False,
+            "download.directory_upgrade": True,
+        },
+    )
     driver = webdriver.Chrome(options=chrome_options)
     driver.set_window_size(1380, 900)
-    navigator_properties = driver.execute_script("""
+    navigator_properties = driver.execute_script(
+        """
         return {
             userAgent: navigator.userAgent,
             appVersion: navigator.appVersion,
@@ -46,7 +49,8 @@ def ses_init(request):
             vendor: navigator.vendor,
             vendorSub: navigator.vendorSub
         };
-    """)
+    """
+    )
 
     # Print the extracted properties
     print("Navigator Properties:", navigator_properties)
@@ -69,7 +73,7 @@ def pytest_runtest_makereport(item, call):
                 )
 
                 browser_logs = ses_init.get_log("browser")
-                error_logs = [log for log in browser_logs if log['level'] == 'SEVERE']
+                error_logs = [log for log in browser_logs if log["level"] == "SEVERE"]
 
                 # Attach filtered browser console log
                 allure.attach(

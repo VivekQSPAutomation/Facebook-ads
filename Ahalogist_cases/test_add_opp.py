@@ -21,7 +21,7 @@ class Test_add_opp:
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
     @pytest.mark.run(order=Order.Add_opps)
-    def test_add(self, ses_init, request,test_data):
+    def test_add(self, ses_init, request, test_data):
         call = self.add_opp_object(ses_init)
         if call.add_opp(test_data):
             assert True

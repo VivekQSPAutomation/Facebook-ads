@@ -14,5 +14,5 @@ class Test_Capabilities:
     def test_capabilities_details(self, ses_init):
 
         obj = Capabilities_pages(ses_init)
-        status= obj.get_capablities_details()
+        status = obj.get_capablities_details()
         assert status

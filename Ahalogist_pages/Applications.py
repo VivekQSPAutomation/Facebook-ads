@@ -67,19 +67,19 @@ class Application(Basepage):
 
     def __init__(self, ses_init):
         super().__init__(ses_init)
-        self.driver.get(
-            f"{TestData.env_setup(self)}/applications/edit/general/0"
-        )
+        self.driver.get(f"{TestData.env_setup(self)}/applications/edit/general/0")
 
     def Create_application(self):
         count = 1
         while True:
             try:
                 self.do_click(self.Connected_to_Campaign)
-                if 'staging' in TestData.env_setup(self):
+                if "staging" in TestData.env_setup(self):
                     self.do_send_keys(self.Search_to_campaign, TestData.Campaign_name)
                 else:
-                    self.do_send_keys(self.Search_to_campaign, TestData.Campaign_prod_name)
+                    self.do_send_keys(
+                        self.Search_to_campaign, TestData.Campaign_prod_name
+                    )
                 self.do_click(
                     (
                         By.XPATH,
@@ -191,4 +191,3 @@ class Application(Basepage):
                 if count < 3:
                     return False
                 count = count + 1
-

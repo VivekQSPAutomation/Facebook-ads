@@ -74,9 +74,7 @@ class CorrectionDraft(Basepages):
                 if retry_count > 3:
                     return False
                 else:
-                    self.driver.get(
-                        f"{TestData.env_setup(self)}/workspace"
-                    )
+                    self.driver.get(f"{TestData.env_setup(self)}/workspace")
                     retry_count += 1
 
             count += 1

@@ -122,14 +122,10 @@ class Remove_Influence(Basepage):
                 if not remaining_elements:
                     break
 
-
-
-
-
             self.get_window(0)
         except TimeoutException as e:
             self.get_window(0)
-            if data ==  TestData.Campaign_name:
+            if data == TestData.Campaign_name:
                 self.do_click(self.Dots)
                 self.do_click(self.Job_tracker_delete)
                 WebDriverWait(self.driver, 30).until(

@@ -18,15 +18,10 @@ class Test_onboard:
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
     @pytest.mark.run(order=Order.Add_queue)
-    def test_add_queue_influence(self, ses_init,request):
+    def test_add_queue_influence(self, ses_init, request):
         # remove_files_in_directory(f"{os.getcwd()}/screenshots")
         # screen = aha_recording_and_capturing_screen(ses_init, request.node.name)
         add_queue = self.add_queue_object(ses_init)
         add_queue.add_to_queue_influence()
         # aha_stop_screen_record(screen)
         # aha_video_creation_from_screenshots(request.node.name)
-
-
-
-
-
