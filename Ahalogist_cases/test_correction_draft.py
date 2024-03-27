@@ -5,6 +5,7 @@ import pytest
 
 from Ahalogist_pages.AhalogistLogin import Welcome_session
 from Ahalogist_pages.Corrected_Draft import Corrected_draft
+from Config.test_order import Order
 
 
 class Test_CorrectionDraft:
@@ -20,7 +21,7 @@ class Test_CorrectionDraft:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=25)
+    @pytest.mark.run(order=Order.Correction_draft)
     def test_Correction_details(self, ses_init, request):
         # remove_files_in_directory(f"{os.getcwd()}/screenshots")
         # screen = aha_recording_and_capturing_screen(ses_init, request.node.name)

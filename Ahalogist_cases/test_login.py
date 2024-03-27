@@ -2,6 +2,7 @@ import allure
 import pytest
 
 from Ahalogist_pages.AhalogistLogin import Welcome_session
+from Config.test_order import Order
 
 
 class TestLogin:
@@ -14,7 +15,7 @@ class TestLogin:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=15)
+    @pytest.mark.run(order=Order.Aha_login)
     def test_login_page(self, ses_init, request):
         # remove_files_in_directory(f"{os.getcwd()}/screenshots")
         # screen = aha_recording_and_capturing_screen(ses_init, request.node.name)

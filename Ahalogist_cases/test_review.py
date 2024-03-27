@@ -3,6 +3,7 @@ import pytest
 
 from Ahalogist_pages.AhalogistLogin import Welcome_session
 from Ahalogist_pages.Review_influencers import ReviewInflu
+from Config.test_order import Order
 
 
 class Test_Review:
@@ -14,7 +15,7 @@ class Test_Review:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=30)
+    @pytest.mark.run(order=Order.Review)
     def test_review(self, ses_init):
         review = self.review_influ(ses_init)
         review.review_influencer()

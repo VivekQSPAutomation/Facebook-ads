@@ -3,6 +3,7 @@
 # import allure
 # import pytest
 #
+# from Config.test_order import Order
 # from Influncers_pages.Random_email import Random_Email
 # from Influncers_pages.Signup import Signup
 # from Influncers_pages.reportCreation import ReportCreation
@@ -27,7 +28,7 @@
 #     @allure.story("Critical Tests")
 #     @allure.severity(allure.severity_level.CRITICAL)
 #     @pytest.mark.critical
-#     @pytest.mark.run(order=1)
+#     @pytest.mark.run(order=Order.random_email)
 #     def test_random_email(self, ses_init, request):
 #         self.refreshdirectory()
 #         # screen = recording_and_capturing_screen(ses_init, request.node.name)
@@ -47,7 +48,7 @@
 #     @allure.feature("Signup Functionality")
 #     @allure.story("Critical Tests")
 #     @pytest.mark.critical
-#     @pytest.mark.run(order=2)
+#     @pytest.mark.run(order=Order.signup)
 #     def test_form_child(self, ses_init, request):
 #         # remove_files_in_directory(os.getcwd() + "/screenshots")
 #         # screen = recording_and_capturing_screen(ses_init, request.node.name)
@@ -66,7 +67,7 @@
 #
 #     @allure.feature("Signup Functionality")
 #     @allure.story("Critical Tests")
-#     @pytest.mark.run(order=3)
+#     @pytest.mark.run(order=Order.verification_email)
 #     def test_verification_email(self, ses_init, request):
 #         # remove_files_in_directory(os.getcwd() + "/screenshots")
 #         # screen = recording_and_capturing_screen(ses_init, request.node.name)

@@ -3,6 +3,7 @@ import pytest
 
 from Ahalogist_pages.AhalogistLogin import Welcome_session
 from Ahalogist_pages.Mark_complete import MarkComplete
+from Config.test_order import Order
 
 
 class Test_Mark_Complete:
@@ -18,7 +19,7 @@ class Test_Mark_Complete:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=28)
+    @pytest.mark.run(order=Order.mark_complete)
     def test_mark_complete(self, ses_init, request):
         # wel_obj = self.welcome_object(ses_init)
         # wel_obj.login_url_redirect_session()

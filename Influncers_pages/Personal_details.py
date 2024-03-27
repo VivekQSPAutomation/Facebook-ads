@@ -34,7 +34,6 @@ class Personal_pages(Basepages):
             form_child = self.get_form_input_child()
             count =1
             for child in form_child:
-                print(child.get_attribute("value"))
                 if child.get_attribute("value") == "true":
                     self.do_click(
                         (
@@ -89,7 +88,6 @@ class Personal_pages(Basepages):
                         )
 
                 elif child.get_attribute("value") == "American Indian or Alaska Native":
-                    print("//input[@id = '{}']/..".format(child.get_attribute("id")))
                     self.do_click(
                         (
                             By.XPATH,

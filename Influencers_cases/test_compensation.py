@@ -1,6 +1,7 @@
 import allure
 import pytest
 
+from Config.test_order import Order
 from Influncers_pages.Compensation import Compensation_pages
 
 
@@ -9,7 +10,7 @@ class Test_Compensation:
     @allure.story("High Tests")
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.high
-    @pytest.mark.run(order=12)
+    @pytest.mark.run(order=Order.compensation)
     def test_compensation_details(self, ses_init,request):
 
         obj = Compensation_pages(ses_init)

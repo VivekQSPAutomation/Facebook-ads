@@ -3,6 +3,7 @@ import pytest
 
 from Ahalogist_pages.Job_tracker import Job_tracker
 from Config.config import TestData
+from Config.test_order import Order
 
 
 @pytest.fixture(params=[TestData.Campaign_name])
@@ -19,7 +20,7 @@ class Test_Jobtracker:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=17)
+    @pytest.mark.run(order=Order.Job_tracker)
     def test_job_tracker_page(self, ses_init, test_data, request):
         # remove_files_in_directory(f"{os.getcwd()}/screenshots")
         # screen = aha_recording_and_capturing_screen(ses_init, request.node.name)

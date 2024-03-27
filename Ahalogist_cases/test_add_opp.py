@@ -3,6 +3,7 @@ import pytest
 
 from Ahalogist_pages.Add_opp import Opp
 from Config.config import TestData
+from Config.test_order import Order
 
 
 @pytest.fixture(params=TestData.Add_opp)
@@ -19,7 +20,7 @@ class Test_add_opp:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=38)
+    @pytest.mark.run(order=Order.Add_opps)
     def test_add(self, ses_init, request,test_data):
         call = self.add_opp_object(ses_init)
         if call.add_opp(test_data):

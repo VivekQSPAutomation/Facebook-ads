@@ -4,6 +4,7 @@ import allure
 import pytest
 
 from Ahalogist_pages.Add_to_queue import AddtoQueue
+from Config.test_order import Order
 from Influncers_pages.DirectoryRefresh import remove_files_in_directory
 
 
@@ -16,7 +17,7 @@ class Test_onboard:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=21)
+    @pytest.mark.run(order=Order.Add_queue)
     def test_add_queue_influence(self, ses_init,request):
         # remove_files_in_directory(f"{os.getcwd()}/screenshots")
         # screen = aha_recording_and_capturing_screen(ses_init, request.node.name)

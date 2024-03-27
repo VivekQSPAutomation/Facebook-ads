@@ -1,6 +1,7 @@
 import allure
 import pytest
 
+from Config.test_order import Order
 from Influncers_pages.Sign_brief import SignBrief
 
 
@@ -14,7 +15,7 @@ class Test_Sign_brief:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=23)
+    @pytest.mark.run(order=Order.Sign_brief)
     def test_sign_brief(self, ses_init, test_data,request):
         obj = SignBrief(ses_init)
         status = obj.sign_brief(test_data)

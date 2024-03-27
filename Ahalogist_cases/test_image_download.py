@@ -2,6 +2,7 @@ import allure
 import pytest
 
 from Ahalogist_pages.Images_download import Images
+from Config.test_order import Order
 
 
 class Test_Download:
@@ -13,7 +14,7 @@ class Test_Download:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=37)
+    @pytest.mark.run(order=Order.Image_download)
     def test_download(self, ses_init, request):
         call = self.download_object(ses_init)
         call.imagedownload()

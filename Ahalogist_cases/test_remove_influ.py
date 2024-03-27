@@ -5,6 +5,7 @@ import pytest
 
 from Ahalogist_pages.Remove_influencers import Remove_Influence
 from Config.config import TestData
+from Config.test_order import Order
 
 
 @pytest.fixture(params=[TestData.Campaign_name])
@@ -24,7 +25,7 @@ class Test_remove:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=16)
+    @pytest.mark.run(order=Order.remove_influ)
     def test_remove_influence(self, ses_init, test_data, test_prod_data, request):
         # remove_files_in_directory(f"{os.getcwd()}/screenshots")
         # screen = aha_recording_and_capturing_screen(ses_init, request.node.name)

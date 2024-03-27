@@ -1,6 +1,7 @@
 import allure
 import pytest
 
+from Config.test_order import Order
 from Influncers_pages.Draft import Draft
 
 
@@ -14,7 +15,7 @@ class Test_Draft:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=24)
+    @pytest.mark.run(order=Order.Draft)
     def test_draft(self, ses_init, test_data,request):
 
         obj = Draft(ses_init)

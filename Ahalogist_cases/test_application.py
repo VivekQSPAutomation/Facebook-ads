@@ -3,6 +3,7 @@ import pytest
 
 from Ahalogist_pages.Applications import Application
 from Ahalogist_pages.Delete_application import DeleteApplication
+from Config.test_order import Order
 
 
 class Test_Application:
@@ -18,7 +19,7 @@ class Test_Application:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=18)
+    @pytest.mark.run(order=Order.Application)
     def test_delete_application_page(self, ses_init, request):
         # remove_files_in_directory(f"{os.getcwd()}/screenshots")
         # screen = aha_recording_and_capturing_screen(ses_init, request.node.name)

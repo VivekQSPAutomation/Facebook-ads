@@ -4,11 +4,12 @@ import os
 import pytest
 
 from Config.config import TestData
+from Config.test_order import Order
 from Influncers_pages.message import Message
 
 
 class Test_reportemail:
-    @pytest.mark.run(order=43)
+    @pytest.mark.run(order=Order.Report_email)
     def test_sending_email(self):
         # Current date and time
         current_datetime = datetime.datetime.now()

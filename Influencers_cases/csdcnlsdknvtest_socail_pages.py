@@ -3,6 +3,7 @@ import time
 import allure
 import pytest
 
+from Config.test_order import Order
 from Influncers_pages.Social_pages import Social_pages
 
 
@@ -11,7 +12,7 @@ class Test_Social:
     @allure.story("High Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.high
-    @pytest.mark.run(order=8)
+    @pytest.mark.run(order=Order.facebook_login)
     def test_facebook_author(self, ses_init):
         obj = Social_pages(ses_init)
         status = obj.facebook_author()
@@ -22,7 +23,7 @@ class Test_Social:
     @allure.story("High Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.high
-    @pytest.mark.run(order=7)
+    @pytest.mark.run(order=Order.pinterest_login)
     def test_pinterest_author(self, ses_init):
         obj = Social_pages(ses_init)
         status  = obj.pinterest_author()
@@ -35,7 +36,7 @@ class Test_Social:
     @allure.story("High Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.high
-    @pytest.mark.run(order=9)
+    @pytest.mark.run(order=Order.Insta_login)
     def test_instagram_author(self, ses_init):
         obj = Social_pages(ses_init)
         status = obj.instagram_author()
@@ -44,7 +45,7 @@ class Test_Social:
 
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.high
-    @pytest.mark.run(order=10)
+    @pytest.mark.run(order=Order.social_button)
     def test_next_button(self, ses_init):
         obj = Social_pages(ses_init)
         obj.next_button()

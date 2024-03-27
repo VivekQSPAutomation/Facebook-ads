@@ -3,6 +3,7 @@ import pytest
 
 from Ahalogist_pages.campaign_price import Campprice
 from Config.config import TestData
+from Config.test_order import Order
 
 
 @pytest.fixture(params=TestData.camp_price)
@@ -17,7 +18,7 @@ class Test_Camprice:
     @allure.story("Critical Tests")
     @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.critical
-    @pytest.mark.run(order=40)
+    @pytest.mark.run(order=Order.Campaign_price)
     def test_price(self, ses_init, test_data,request):
         camp = self.price(ses_init)
         status = camp.price(test_data)
