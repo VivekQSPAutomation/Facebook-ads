@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zipapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zipapp
+  template:
+    metadata:
+      labels:
+        app: zipapp
+    spec:
+      containers:
+      - name: zipapp
+        image: gcr.io/pdf-generator-410713/zip@sha256:58688694f78a2db02d0e0b7eefec58a5440a2e4212aa0afc98e7e005f0840fbb
+        ports:
+        - containerPort: 8000
+      imagePullSecrets:
+      - name: gcr-access-token
