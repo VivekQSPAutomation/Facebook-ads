@@ -135,6 +135,40 @@ class Draft(Basepages):
                             print(os.environ.get("preview"))
                             status = True
                             break
+                        elif data == "VIDEO BLOG POST":
+                            element = wait.until(
+                                EC.visibility_of_element_located(
+                                    (
+                                        By.XPATH,
+                                        f"(//div[@class='container  '])[{count}]//button[contains(text(),'Edit Draft')]",
+                                    )
+                                )
+                            )
+                            self.scroll_to(element)
+                            self.click_element_with_js(element)
+                            self.driver.execute_script("document.body.style.zoom='1'")
+                            folder_path = os.getcwd()
+                            files_in_folder = os.listdir("./images/")
+                            file_path = [
+                                os.path.join(folder_path, "images", file_name)
+                                for file_name in files_in_folder
+                            ]
+                            file_input = self.driver.find_element(
+                                By.XPATH, "//input[@type='file']"
+                            )
+                            file_input.send_keys("\n".join(file_path))
+                            self.do_send_keys(self.Video_title, "Testing QA")
+                            self.do_send_keys(self.video_url, "https://google.com")
+                            self.do_send_keys(
+                                self.Edit_update, "Testing QA using Automation #ad"
+                            )
+                            self.do_send_keys(self.Edit_update, Keys.ENTER)
+                            self.do_click(self.photo_click)
+                            time.sleep(5)
+                            self.do_click(self.review_send)
+                            time.sleep(8)
+                            status = True
+                            break
 
             except StaleElementReferenceException:
                 continue
@@ -149,4 +183,5 @@ class Draft(Basepages):
                 retry_count += 1
             if status:
                 break
-            count += 1
+            count +=1
+

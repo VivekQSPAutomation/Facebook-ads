@@ -1,8 +1,8 @@
 selenium
 pytest
-allure - pytest
+allure-pytest
 PyGithub
-pytest - ordering
+pytest-ordering
 pydantic
 facebook_business
 requests

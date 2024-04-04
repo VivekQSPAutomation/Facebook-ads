@@ -1,11 +1,12 @@
 import allure
 import pytest
 
+from Config.config import TestData
 from Config.test_order import Order
 from Influncers_pages.Sign_brief import SignBrief
 
 
-@pytest.fixture(params=["SOCIAL POST"])
+@pytest.fixture(params=TestData.draft_type)
 def test_data(request):
     return request.param
 

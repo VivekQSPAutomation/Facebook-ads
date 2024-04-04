@@ -2,11 +2,12 @@ import allure
 import pytest
 
 from Ahalogist_pages.Onbaording_influencers import onboardInfluencers
+from Config.config import TestData
 from Config.test_order import Order
 
 
 #
-@pytest.fixture(params=["Social"])
+@pytest.fixture(params=TestData.Onboard)
 def test_data(request):
     return request.param
 

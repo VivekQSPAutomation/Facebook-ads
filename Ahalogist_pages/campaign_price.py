@@ -39,6 +39,7 @@ class Campprice(Basepage):
         self.do_click(self.Dots)
         self.do_click(self.Edit_campaign)
         self.get_window(-1)
+        self.scroll_to(self.get_element(self.campaign_price),100)
         price = self.get_element_text(self.campaign_price)
         camp_price = int(price[1:].replace(",", ""))
         print(camp_price)

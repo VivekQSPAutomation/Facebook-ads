@@ -65,10 +65,10 @@ class TestData:
     Campaign_prod_name = "Q203537"
     Campaign_performance_name = "OB570X8TL"
     Campaign_name = "OS3OY4NTL"
-    Add_opp = ["OB570X8TL"]
+    Add_opp = ["OB570X8TL", "OJQPW4NTL"]
     camp_price = ["OJQPW4NTL", "OB570X8TL", "OPPF386TL", "OLUOM5QTL-1947-1"]
-    # Campaign_name = "OPPF386TL"
-    # Campaign_name = "Q263199"
+    draft_type = ["SOCIAL POST", "VIDEO BLOG POST"]
+    Onboard = ["Social", "Video"]
 
     #####Facebook and instagram Ads Config ####
 

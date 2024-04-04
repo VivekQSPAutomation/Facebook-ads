@@ -279,3 +279,15 @@
 2024-03-27 04:09:39,236 [WARNING]: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fdf0f6d2820>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/6f91fb4539ab6d3a761411f967386427
 2024-03-27 04:09:39,238 [WARNING]: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fdf0fb49940>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/6f91fb4539ab6d3a761411f967386427
 2024-03-27 04:09:39,241 [WARNING]: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fdf0cc27250>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/6f91fb4539ab6d3a761411f967386427
+2024-03-30 08:18:49,175 [INFO]: 2024-03-30 08:18:49.174083 - 'Ahalogist_cases/test_login.py::TestLogin::test_login_page' finished with outcome: passed
+2024-03-30 08:19:35,560 [INFO]: 2024-03-30 08:19:35.560164 - 'Ahalogist_cases/test_filter.py::Test_filter::test_filter' finished with outcome: passed
+2024-03-30 08:19:51,779 [INFO]: 2024-03-30 08:19:51.779330 - 'Ahalogist_cases/test_add_opp.py::Test_add_opp::test_add[OB570X8TL]' finished with outcome: passed
+2024-03-30 08:20:22,922 [ERROR]: 2024-03-30 08:20:22.922418 - 'Ahalogist_cases/test_add_opp.py::Test_add_opp::test_add[OJQPW4NTL]' finished with outcome: failed
+2024-03-30 08:21:11,784 [INFO]: 2024-03-30 08:21:11.784247 - 'Ahalogist_cases/test_login.py::TestLogin::test_login_page' finished with outcome: passed
+2024-03-30 08:21:58,674 [INFO]: 2024-03-30 08:21:58.674474 - 'Ahalogist_cases/test_filter.py::Test_filter::test_filter' finished with outcome: passed
+2024-03-30 08:22:27,441 [ERROR]: 2024-03-30 08:22:27.441719 - 'Ahalogist_cases/test_add_opp.py::Test_add_opp::test_add[OB570X8TL]' finished with outcome: failed
+2024-03-30 08:22:42,064 [INFO]: 2024-03-30 08:22:42.064658 - 'Ahalogist_cases/test_add_opp.py::Test_add_opp::test_add[OJQPW4NTL]' finished with outcome: passed
+2024-03-30 08:25:16,384 [INFO]: 2024-03-30 08:25:16.380242 - 'Ahalogist_cases/test_login.py::TestLogin::test_login_page' finished with outcome: passed
+2024-03-30 08:26:04,130 [INFO]: 2024-03-30 08:26:04.130277 - 'Ahalogist_cases/test_filter.py::Test_filter::test_filter' finished with outcome: passed
+2024-03-30 08:26:22,798 [INFO]: 2024-03-30 08:26:22.797949 - 'Ahalogist_cases/test_add_opp.py::Test_add_opp::test_add[OB570X8TL]' finished with outcome: passed
+2024-03-30 08:26:39,115 [INFO]: 2024-03-30 08:26:39.115555 - 'Ahalogist_cases/test_add_opp.py::Test_add_opp::test_add[OJQPW4NTL]' finished with outcome: passed

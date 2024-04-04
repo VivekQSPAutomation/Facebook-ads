@@ -1,5 +1,6 @@
 import time
 
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 
 from Ahalogist_pages.Basepage import Basepage
@@ -17,13 +18,29 @@ class Welcome_session(Basepage):
         ses_init.get(f"{TestData.env_setup(self)}/signup")
 
     def login_url_redirect_session(self):
-        self.do_click(self.LOGIN_CLICKABLE)
-        time.sleep(1)
-        self.do_send_keys(self.EMAIL, TestData.Aha_login_email)
-        self.do_send_keys(self.PASSWORD, TestData.Aha_login_password)
-        self.do_click(self.SUBMIT_BUT)
-        time.sleep(3)
-        if self.driver.current_url == f"{TestData.env_setup(self)}/signup":
-            return False
-        else:
-            return True
+        global count
+        while True:
+            try:
+                count=1
+                self.do_click(self.LOGIN_CLICKABLE)
+                time.sleep(1)
+                self.do_send_keys(self.EMAIL, TestData.Aha_login_email)
+                self.do_send_keys(self.PASSWORD, TestData.Aha_login_password)
+                self.do_click(self.SUBMIT_BUT)
+                time.sleep(3)
+                if self.driver.current_url == f"{TestData.env_setup(self)}/signup":
+                    return False
+                else:
+                    return True
+
+            except TimeoutException:
+                count +=1
+                if count >3:
+                    break
+                else:
+                    self.driver.refresh()
+
+
+
+
+

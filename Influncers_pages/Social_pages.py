@@ -134,13 +134,13 @@ class Social_pages(Basepages):
                     .is_displayed()
                 )
                 if (
-                    WebDriverWait(self.driver, 10)
-                    .until(
-                        EC.visibility_of_element_located(
-                            (By.XPATH, "//div[contains(text(),'Give access')]")
+                        WebDriverWait(self.driver, 10)
+                                .until(
+                            EC.visibility_of_element_located(
+                                (By.XPATH, "//div[contains(text(),'Give access')]")
+                            )
                         )
-                    )
-                    .is_displayed()
+                                .is_displayed()
                 ):
                     WebDriverWait(self.driver, 10).until(
                         EC.visibility_of_element_located(
@@ -172,12 +172,7 @@ class Social_pages(Basepages):
         self.do_click(self.insta)
         try:
             try:
-                self.do_send_keys(self.insta_login, TestData.SOCIAL_EMIAL)
-                self.do_send_keys(self.insta_pass, TestData.SOCIAL_PASS)
-                self.do_click(self.insta_button)
-                self.do_click(self.not_now)
 
-            except TimeoutException:
                 WebDriverWait(self.driver, 10).until(
                     EC.visibility_of_element_located(
                         (
@@ -186,10 +181,11 @@ class Social_pages(Basepages):
                         )
                     )
                 ).click()
-                # self.do_send_keys(self.insta_login, TestData.SOCIAL_EMIAL)
-                # self.do_send_keys(self.insta_pass, TestData.SOCIAL_PASS)
-                # self.do_click(self.insta_button)
-                # self.do_click(self.not_now)
+            except TimeoutException:
+                self.do_send_keys(self.insta_login, TestData.SOCIAL_EMIAL)
+                self.do_send_keys(self.insta_pass, TestData.SOCIAL_PASS)
+                self.do_click(self.insta_button)
+                self.do_click(self.not_now)
 
             self.do_click(self.insta_allow)
             msg_value = (
