@@ -1,0 +1,119 @@
+user_agent,ip_address,label
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html),192.168.1.5,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",10.0.0.2,1
+Mozilla/5.0 (compatible; Bingbot/2.0; +http://www.bing.com/bingbot.htm),172.16.0.1,2
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots),192.168.0.10,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0,10.0.1.3,1
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm),172.16.1.2,2
+Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html),192.168.2.4,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko,10.0.2.5,1
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html),172.16.2.3,2
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots),192.168.3.6,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1,10.0.3.7,1
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm),172.16.3.4,2
+Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html),192.168.4.8,2
+Mozilla/5.0 (Windows NT 6.3; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0,10.0.4.9,1
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html),172.16.4.5,2
+Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html),192.168.5.10,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",10.0.5.11,1
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html),172.16.5.6,2
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots),192.168.6.12,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0,10.0.6.13,1
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm),172.16.6.7,2
+Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html),192.168.7.14,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393",10.0.7.15,1
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html),172.16.7.8,2
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots),192.168.8.16,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0,10.0.8.17,1
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm),172.16.8.9,2
+Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html),192.168.9.18,2
+Mozilla/5.0 (Windows NT 6.3; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0,10.0.9.19,1
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html),172.16.9.10,2
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots),192.168.10.20,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko,10.0.10.21,1
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm),172.16.10.11,2
+Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html),192.168.11.22,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1,10.0.11.23,1
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html),172.16.11.12,2
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots),192.168.12.24,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393",10.0.12.25,1
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm),172.16.12.13,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",127.0.0.1,1
+Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html),192.168.13.26,2
+Mozilla/5.0 (Windows NT 6.3; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0,10.0.13.27,1
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html),172.16.13.14,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393",127.0.0.1,1
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots),192.168.14.28,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0,10.0.14.29,1
+Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/),192.168.15.30,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",10.0.15.31,1
+Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html),172.16.15.16,2
+Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko,127.0.0.1,1
+SemrushBot/1.2~bl (~semrush.com/bot.html),192.168.16.32,2
+Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0,10.0.16.33,1
+Bytespider,172.16.16.17,2
+Aboundex/0.3 (http://www.example.com/bot.html),192.168.17.34,2
+"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/58.0.3029.110 Chrome/58.0.3029.110 Safari/537.36",10.0.17.35,1
+008/0.83 (destined; MSIE 6.0; Harvest Rover),172.16.17.18,2
+Baiduspider-video (+http://www.baidu.com/search/spider_video.html),192.168.18.36,2
+Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0,10.0.18.37,1
+BPImageWalker/2.0 (www.bpimageworld.com/webtools/webtools_info_bot.aspx),172.16.18.19,2
+Holmes/3.19 (http://www.av-test.ru/vl/),192.168.19.38,2
+"Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",10.0.19.39,1
+Ruby/2.3.3,172.16.19.20,2
+ZumBot/1.0 (ZUM Search 5.x; http://help.zam.com/en/zu%20crawler.html),192.168.20.40,2
+Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0,10.0.20.41,1
+CCDCBOT,172.16.20.21,2
+SiteBar/3.3.8 (Metadata; http://sitebar.org/; http://sitebar.org/sitebar-metadata.xml),192.168.21.42,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0,10.0.21.43,1
+ias_crawler/2.0 (http://www.internet-archiveis.net),172.16.21.22,2
+searchengine-robot@isitnull.com,192.168.22.44,2
+"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",10.0.22.45,1
+CFNetwork/808.1.4 Darwin/16.3.0 (x86_64),172.16.22.23,2
+psbot/0.1 (+http://www.pagereverified.com/psbot.php),192.168.23.46,2
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",10.0.23.47,1
+Scrapy/1.5.0 (+https://scrapy.org),172.16.23.24,2
+Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/),192.168.24.48,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",10.0.24.49,1
+SemrushBot/1.2~bl (~semrush.com/bot.html),172.16.24.25,2
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7",127.0.0.1,1
+Bytespider,192.168.25.50,2
+"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/58.0.3029.110 Chrome/58.0.3029.110 Safari/537.36",10.0.25.51,1
+Aboundex/0.3 (http://www.example.com/bot.html),172.16.25.26,2
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0,127.0.0.1,1
+008/0.83 (destined; MSIE 6.0; Harvest Rover),192.168.26.52,2
+Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0,10.0.26.53,1
+Baiduspider-video (+http://www.baidu.com/search/spider_video.html),172.16.26.27,2
+Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko,127.0.0.1,1
+BPImageWalker/2.0 (www.bpimageworld.com/webtools/webtools_info_bot.aspx),192.168.27.54,2
+"Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",10.0.27.55,1
+Holmes/3.19 (http://www.av-test.ru/vl/),172.16.27.28,2
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:54.0) Gecko/20100101 Firefox/54.0,127.0.0.1,1
+Ruby/2.3.3,192.168.28.56,2
+Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0,10.0.28.57,1
+ZumBot/1.0 (ZUM Search 5.x; http://help.zam.com/en/zu%20crawler.html),172.16.28.29,2
+"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36",127.0.0.1,1
+CCDCBOT,192.168.29.58,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0,10.0.29.59,1
+SiteBar/3.3.8 (Metadata; http://sitebar.org/; http://sitebar.org/sitebar-metadata.xml),172.16.29.30,2
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4",127.0.0.1,1
+ias_crawler/2.0 (http://www.internet-archiveis.net),192.168.30.60,2
+"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",10.0.30.61,1
+searchengine-robot@isitnull.com,172.16.30.31,2
+"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36",127.0.0.1,1
+CFNetwork/808.1.4 Darwin/16.3.0 (x86_64),192.168.31.62,2
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",10.0.31.63,1
+psbot/0.1 (+http://www.pagereverified.com/psbot.php),172.16.31.32,2
+"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",127.0.0.1,1
+Scrapy/1.5.0 (+https://scrapy.org),192.168.32.64,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",10.0.32.65,1
+Googlebot/2.1 (+http://www.google.com/bot.html),172.16.32.33,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0,127.0.0.1,1
+Martin Walter's Cachebot/1.4 (http://websiterepair.info/cachebot.php),192.168.33.66,2
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393",10.0.33.67,1
+MnoGoSearch/3.3.0,172.16.33.34,2
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8",127.0.0.1,1
+SurdotlyBot/1.0.5,192.168.34.68,2
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0,10.0.34.69,1
+BLEXBot/1.0 (+http://webmeup-crawler.com/),172.16.34.35,2
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0,127.0.0.1,1
