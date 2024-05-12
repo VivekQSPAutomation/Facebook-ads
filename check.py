@@ -10,6 +10,8 @@ def decor(func):
     return wraps
 
 
+
+
 @decor
 def check(value):
     print(value)
