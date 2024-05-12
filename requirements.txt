@@ -1,0 +1,9 @@
+selenium
+pytest
+allure-pytest
+PyGithub
+pytest-ordering
+pydantic
+facebook_business
+requests
+pandas

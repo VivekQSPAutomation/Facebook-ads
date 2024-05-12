@@ -1,0 +1,25 @@
+
+from pytest_testrail.plugin import testrail
+
+from Pages.Email_change import AccountEmailChange
+
+from Pages.Random_email import Random_Email
+class Test_Email_verification:
+
+
+    def test_accuont_email_button(self, ses_init):
+        obj = AccountEmailChange(ses_init)
+        obj.account_email_button()
+
+    def test_click_on_change_email(self,ses_init):
+        obj = AccountEmailChange(ses_init)
+        obj.Email_button_click()
+
+    def test_new_email_check(self,ses_init):
+        obj = AccountEmailChange(ses_init)
+        obj.get_email_change()
+
+    def test_verification_email(self,ses_init):
+        obj = Random_Email(ses_init)
+        obj.validation_email()
+
